@@ -129,3 +129,14 @@ INNER JOIN ExpositorCategoria expcat on expcat.id_expositor = exp.id_expositor
 INNER JOIN Categoria cat on cat.id_categoria = expcat.id_categoria
 WHERE TEL.eh_principal = 1
 AND cat.nome = 'Artes';
+
+-- Lista os expositores que participaram de eventos ocorridos no Viaduto Otávio da Rocha
+
+SELECT 
+	exp.nome NOME
+FROM Expositor exp
+INNER JOIN ExpositorCategoria expcat on expcat.id_expositor = exp.id_expositor
+INNER JOIN ExpositorEvento expeve on expeve.id_expositorcategoria = expcat.id_expositorcategoria
+INNER JOIN Evento even on even.id_evento = expeve.id_evento
+INNER JOIN Local loc on loc.id_local = even.id_local
+WHERE loc.nome = 'Viaduto Otávio da Rocha'
