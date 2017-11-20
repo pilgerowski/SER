@@ -63,15 +63,12 @@ insert into evento (id_evento, nome, data, id_local) values (evento_seq.nextval,
 insert into evento (id_evento, nome, data, id_local) values (evento_seq.nextval, 'Feira JAdore #2', TO_DATE('2010/07/03 13:00:00', 'yyyy/mm/dd hh24:mi:ss'), 2);
 insert into evento (id_evento, nome, data, id_local) values (evento_seq.nextval, 'Feira JAdore #3', TO_DATE('2010/09/03 13:00:00', 'yyyy/mm/dd hh24:mi:ss'), 3);
 
-insert into endereco (id_endereco, rua, numero, complemento, eh_principal) values (endereco_seq.nextval, 'Av. Borges de Medeiros', '101', '', 1);
-insert into endereco (id_endereco, rua, numero, complemento, eh_principal) values (endereco_seq.nextval, 'Av. Borges de Medeiros', '1001', '', 1);
-
-
 insert into expositor (id_expositor, nome, marca, url_site, url_facebook, url_instagram) values (expositor_seq.nextval, 'João das Couves', 'DasCouves', 'http://www.dascouves.com.br', '', '');
 insert into expositor (id_expositor, nome, marca, url_site, url_facebook, url_instagram) values (expositor_seq.nextval, 'Maria Fulô', 'Maria Fulô', '', 'http://facebook.com/MariaFulo', '');
 
 insert into endereco (id_endereco, rua, numero, complemento, eh_principal, id_municipio, id_expositor) values (endereco_seq.nextval, 'Av. Borges de Medeiros', '101', '', 1, 1, 1);
-insert into endereco (id_endereco, rua, numero, complemento, eh_principal, id_municipio, id_expositor) values (endereco_seq.nextval, 'Av. Borges de Medeiros', '101', '', 1, 1, 1);
+insert into endereco (id_endereco, rua, numero, complemento, eh_principal, id_municipio, id_expositor) values (endereco_seq.nextval, 'Av. Praia de Belas', '102', '', 0, 1, 1);
+insert into endereco (id_endereco, rua, numero, complemento, eh_principal, id_municipio, id_expositor) values (endereco_seq.nextval, 'Av. Boqueirão', '103', '', 1, 3, 2);
 
 insert into email (id_email, email, id_expositor) values (email_seq.nextval, 'charles.pilger@gmail.com', 1);
 insert into email (id_email, email, id_expositor) values (email_seq.nextval, 'charles@pilger.com.br', 2);
@@ -91,6 +88,3 @@ insert into expositorevento(id_expositorevento, presente, quantidade_vendas, id_
 insert into expositorevento(id_expositorevento, presente, quantidade_vendas, id_status,	id_evento, id_expositorcategoria ) values (expositorevento_seq.nextval, 1, 10, 2, 1, 4);
 insert into expositorevento(id_expositorevento, presente, quantidade_vendas, id_status,	id_evento, id_expositorcategoria ) values (expositorevento_seq.nextval, 1, 20, 2, 2, 4);
 insert into expositorevento(id_expositorevento, presente, quantidade_vendas, id_status,	id_evento, id_expositorcategoria ) values (expositorevento_seq.nextval, 1, 30, 2, 3, 5);
-
-
-
