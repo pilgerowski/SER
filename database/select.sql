@@ -105,3 +105,17 @@ WHERE expev.id_evento = (
 	WHERE nome = 'Feira JAdore #1'
 )
 ORDER BY Expositor;
+
+--- Lista de todos os expositores com o respectivo endereço
+SELECT 
+	exp.nome NOME, 
+	end.rua RUA, 
+	end.numero NUMERO, 
+	end.complemento COMPLEMENTO, 
+	muni.nome MUNICIPIO, 
+	uf.sigla ESTADO
+FROM Expositor exp
+INNER JOIN Endereco end on end.id_expositor = exp.id_expositor
+INNER JOIN Municipio muni on end.id_municipio = muni.id_municipio
+INNER JOIN UF on muni.id_uf = uf.id_uf
+
