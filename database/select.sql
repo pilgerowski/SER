@@ -21,8 +21,9 @@ WHERE expev.id_status IN (
 	WHERE nome = 'Débito'
 );
 
---- Lista de todos os expositores com suas marcas e municípios
-SELECT DISTINCT
+--- Lista de todos os expositores com suas marcas e o município do
+--- endereço marcado como principal
+SELECT
 	exp.nome Expositor,
 	exp.marca Marca,
 	m.nome Municipio,
@@ -33,7 +34,8 @@ INNER JOIN Endereco end
 INNER JOIN Municipio m
 	ON end.id_municipio = m.id_municipio
 INNER JOIN UF
-	ON m.id_uf = uf.id_uf;
+ON m.id_uf = uf.id_uf
+WHERE end.eh_principal = 1;
 	
 --- Lista de eventos com ID, nome, data e número de expositores
 --- para eventos com mais de um expositor
