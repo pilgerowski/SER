@@ -119,3 +119,13 @@ INNER JOIN Endereco end on end.id_expositor = exp.id_expositor
 INNER JOIN Municipio muni on end.id_municipio = muni.id_municipio
 INNER JOIN UF on muni.id_uf = uf.id_uf
 
+-- Lista o telefone principal dos expositores da categoria Artes
+SELECT 
+	exp.nome NOME, 
+	tel.numero TELEFONE
+FROM Expositor exp
+INNER JOIN Telefone tel on tel.id_expositor = exp.id_expositor
+INNER JOIN ExpositorCategoria expcat on expcat.id_expositor = exp.id_expositor
+INNER JOIN Categoria cat on cat.id_categoria = expcat.id_categoria
+WHERE TEL.eh_principal = 1
+AND cat.nome = 'Artes';
