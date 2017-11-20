@@ -87,4 +87,4 @@ insert into expositorevento(id_expositorevento, presente, quantidade_vendas, id_
 insert into expositorevento(id_expositorevento, presente, quantidade_vendas, id_status,	id_evento, id_expositorcategoria ) values (expositorevento_seq.nextval, 1, 30, 1, 3, 2);
 insert into expositorevento(id_expositorevento, presente, quantidade_vendas, id_status,	id_evento, id_expositorcategoria ) values (expositorevento_seq.nextval, 1, 10, 2, 1, 4);
 insert into expositorevento(id_expositorevento, presente, quantidade_vendas, id_status,	id_evento, id_expositorcategoria ) values (expositorevento_seq.nextval, 1, 20, 2, 2, 4);
-insert into expositorevento(id_expositorevento, presente, quantidade_vendas, id_status,	id_evento, id_expositorcategoria ) values (expositorevento_seq.nextval, 1, 30, 2, 3, 5);
+insert into expositorevento(id_expositorevento, presente, quantidade_vendas, id_status,	id_evento, id_expositorcategoria ) values (expositorevento_seq.nextval, 1, 30, 3, 3, 5);
