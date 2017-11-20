@@ -33,6 +33,7 @@ CREATE TABLE Evento (
 
 CREATE TABLE Endereco (
 	id_endereco INTEGER,
+	id_expositor INTEGER,
 	rua VARCHAR2(255) NOT NULL,
 	numero VARCHAR2(255) NOT NULL,
 	complemento VARCHAR2(255),
@@ -118,6 +119,11 @@ ALTER TABLE Evento
 ADD CONSTRAINT evento_local_fk
 	FOREIGN KEY (id_local)
 	REFERENCES Local(id_local);
+	
+ALTER TABLE Endereco
+ADD CONSTRAINT endereco_expositor_fk
+	FOREIGN KEY (id_expositor)
+	REFERENCES Expositor(id_expositor);
 
 ALTER TABLE Endereco
 ADD CONSTRAINT endereco_municipio_fk
