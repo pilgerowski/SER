@@ -2,16 +2,10 @@
 
 class Local extends Aplicacao {
 	
-	protected $id_local = 0;
-    protected $nome = "Viaduto Otávio Rocha";
-    protected $localizacao = "Rua Duque de Caxias, sobre a avenida Borges de Medeiros.";
-    protected $notas = "";
-	protected $idade = 21;
-	
-	public function getIdade() {
-		return 13;
-	}
-	
+    protected $nome;
+    protected $localizacao;
+    protected $notas;
+    
     public function inserir()
      {
         trigger_error('Not Implemented!', E_USER_WARNING);
