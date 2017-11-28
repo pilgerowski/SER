@@ -95,29 +95,39 @@ class Conexao {
         	            $valoresAAlterar[$campoAplicacao] = $valor2;
         	        }
     		    }
-    		    var_dump($camposAAlterar);
     		    $camposSQL = implode(", ", $camposAAlterar);
     		    $sql = "UPDATE {$tabelaSQL} SET {$camposSQL} WHERE {$nomeIdObjeto} = {$idObjeto}";
-    		    $p_sql = Conexao::getInstance()->prepare($sql);
+    		    $p_sql = Conexao::getInstance()->prepare($sql);			
+    		    Conexao::getInstance()->beginTransaction();
     		    foreach($valoresAAlterar as $campo => $valor) {
-    		        var_dump(":{$campo}", $valor);
-    		         $p_sql->bindValue(":{$campo}", $valor);
+    		        $p_sql->bindValue(":{$campo}", $valor);
     		    }
+    		    $execute = $p_sql->execute();
+    		    Conexao::getInstance()->commit();
     		    
-    		    return $p_sql->execute();
+    		    return $execute;
 		    }
  		} catch (Exception $e) {
 			Aplicacao::errorMessage($e);
  		}
 	}
 
-	public function Deletar($cod_usuario) {
+	public function Deletar($objeto) {
 		try {
-			$sql = "DELETE FROM usuario WHERE cod_usuario = :cod_usuario";
+		    
+		    $tabelaSQL = $objeto->getAplicacaoTabela();
+		    $camposAplicacao = $objeto->getAplicacaoCampos();
+		    $nomeIdObjeto = $objeto->getNomeId();
+		    $idObjeto = $objeto->getId();
+		    
+			$sql = "DELETE FROM {$tabelaSQL} WHERE {$nomeIdObjeto} = {$idObjeto}";
 			$p_sql = Conexao::getInstance()->prepare($sql);
-			$p_sql->bindValue(":cod_usuario", $cod_usuario);
-
-			return $p_sql->execute();
+			Conexao::getInstance()->beginTransaction();
+			$execute = $p_sql->execute();
+			Conexao::getInstance()->commit();
+			
+			return $execute;
+			
 		} catch (Exception $e) {
 		    Aplicacao::errorMessage($e);
 		}

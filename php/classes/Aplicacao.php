@@ -66,11 +66,8 @@ class Aplicacao {
         if(is_numeric($this->__id))            
             return $this->__id;
         
-//         $nomeVariavelId = $this->getNomeId();
-//         echo $nomeVariavelId;
-//         if(isset($nomeVariavelId)) 
-//             return $$nomeVariavelId;
-        
+        $nomeVariavelId = $this->getNomeId();
+        return $this->$nomeVariavelId;
     }
     
     public function getNomeId() {
