@@ -18,7 +18,7 @@ class Aplicacao {
 		    
 			// Implementando o getter
 			if($metodo[0] == 'g' && $metodo[1] == 'e' && $metodo[2] == 't') {
-				$instancia = strtolower(str_replace('get', '', $metodo));
+				$instancia = lcfirst(str_replace('get', '', $metodo));
 				if(in_array($instancia, $this->getAplicacaoCampos())) {
 					return $this->$instancia;
 				}
@@ -26,7 +26,7 @@ class Aplicacao {
 			
 			// Implementando o setter
 			if($metodo[0] == 's' && $metodo[1] == 'e' && $metodo[2] == 't') {
-				$instancia = strtolower(str_replace('set', '', $metodo));
+				$instancia = lcfirst(str_replace('set', '', $metodo));
 				if(in_array($instancia, $this->getAplicacaoCampos())) {
 					$this->$instancia = $args[0];
 					return;
