@@ -73,7 +73,7 @@ class Conexao {
 	}
 
 	public function Editar($objeto) {
-		//try {
+		try {
 		    $tabelaSQL = $objeto->getAplicacaoTabela();
 		    $camposAplicacao = $objeto->getAplicacaoCampos();
 		    $nomeIdObjeto = $objeto->getNomeId();
@@ -97,21 +97,18 @@ class Conexao {
     		    }
     		    var_dump($camposAAlterar);
     		    $camposSQL = implode(", ", $camposAAlterar);
-    		    $sql = "UPDATE {$tabelaSQL} SET {$camposSQL} WHERE {$nomeIdObjeto} = :valorIdObjeto";
+    		    $sql = "UPDATE {$tabelaSQL} SET {$camposSQL} WHERE {$nomeIdObjeto} = {$idObjeto}";
     		    $p_sql = Conexao::getInstance()->prepare($sql);
     		    foreach($valoresAAlterar as $campo => $valor) {
     		        var_dump(":{$campo}", $valor);
     		         $p_sql->bindValue(":{$campo}", $valor);
     		    }
-    		    var_dump( ":{$nomeIdObjeto}", $idObjeto );
-    		    $p_sql->bindValue(":{$nomeIdObjeto}", $idObjeto );
-    		    var_dump( $p_sql ); 
     		    
     		    return $p_sql->execute();
 		    }
- 		//} catch (Exception $e) {
-		//	Aplicacao::errorMessage($e);
- 		//}
+ 		} catch (Exception $e) {
+			Aplicacao::errorMessage($e);
+ 		}
 	}
 
 	public function Deletar($cod_usuario) {
