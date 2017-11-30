@@ -9,9 +9,6 @@ public class Evento
 	private Date data;
 	private Local local;
 
-	public Evento() { 
-	}
-
 	public Evento(String nome, Date data, Local local) {
 		this.setNome(nome);
 		this.setData(data);

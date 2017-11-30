@@ -4,9 +4,6 @@ public class Email {
 	private String email;
 	private boolean ehPrincipal;
 
-	public Email() {
-	}
-
 	public Email(String email) {
 		this.setEmail(email);
 		this.setEhPrincipal(false);

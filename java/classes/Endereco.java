@@ -3,23 +3,24 @@ package classes;
 public class Endereco
 
 {
-	/** Attributes */
 	private String rua;
 	private String numero;
 	private String complemento;
 	private boolean ehPrincipal;
 	private Municipio municipio;
-
-	public Endereco() {
+	
+	public Endereco(String rua, String numero, Municipio municipio) {
+		this.setRua(rua);
+		this.setNumero(numero);
+		
+		this.setMunicipio(municipio);
 	}
 
 	public Endereco(String rua, String numero, String complemento,
 			boolean ehPrincipal, Municipio municipio) {
-		this.setRua(rua);
-		this.setNumero(numero);
+		this(rua, numero, municipio);
 		this.setComplemento(complemento);
 		this.setEhPrincipal(ehPrincipal);
-		this.setMunicipio(municipio);
 	}
 
 	public void setRua(String rua) {
@@ -60,5 +61,9 @@ public class Endereco
 
 	public Municipio getMunicipio() {
 		return this.municipio;
+	}
+	
+	public String toString() {
+		return rua + ", " + numero + " - " + municipio;
 	}
 }

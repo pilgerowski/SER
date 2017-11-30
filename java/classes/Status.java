@@ -1,23 +1,11 @@
 package classes;
 
 public class Status
-
 {
-
 	private String nome;
 
-	public void Status() {
-		// ## Implementation preserve start class method.Status@void@@
-		// ## Implementation preserve end class method.Status@void@@
-	}
-
-	/**
-	 * Operation
-	 * 
-	 * @param nome
-	 */
-	public void Status(String nome) {
-
+	public Status(String nome) {
+		this.nome = nome;
 	}
 
 	public void setNome(String nome) {

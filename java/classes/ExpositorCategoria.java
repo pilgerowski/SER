@@ -6,22 +6,12 @@ public class ExpositorCategoria {
 	private Categoria categoria;
 	private boolean ativo;
 
-	public ExpositorCategoria() {
-	}
-
 	public ExpositorCategoria(Expositor expositor, Categoria categoria) {
 		this.setExpositor(expositor);
 		this.setCategoria(categoria);
 		this.setAtivo(true);
 	}
 
-	/**
-	 * Operation
-	 * 
-	 * @param expositor
-	 * @param categoria
-	 * @param ativo
-	 */
 	public void ExpositorCategoria(Expositor expositor, Categoria categoria,
 			boolean ativo) {
 		this.setExpositor(expositor);
@@ -44,6 +34,10 @@ public class ExpositorCategoria {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+	
+	public Categoria getCategoria() {
+		return this.categoria;
 	}
 
 	public void setAtivo(boolean ativo) {

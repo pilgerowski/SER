@@ -5,16 +5,12 @@ public class Telefone {
 	private String numero;
 	private boolean ehPrincipal;
 
-	public Telefone() {
-
-	}
-
-	public void Telefone(String numero) {
+	public Telefone(String numero) {
 		this.setNumero(numero);
 		this.setEhPrincipal(true);
 	}
 
-	public void Telefone(String numero, boolean ehPrincipal) {
+	public Telefone(String numero, boolean ehPrincipal) {
 		this.setNumero(numero);
 		this.setEhPrincipal(ehPrincipal);
 	}

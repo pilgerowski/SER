@@ -3,15 +3,10 @@ package classes;
 public class UF
 
 {
-	/** Attributes */
 	private String nome;
 	private String sigla;
 
-	public UF() {
-
-	}
-
-	public void UF(String nome, String sigla) {
+	public UF(String nome, String sigla) {
 		this.setNome(nome);
 		this.setSigla(sigla);
 
@@ -32,5 +27,9 @@ public class UF
 	public String getSigla() {
 		return this.sigla;
 
+	}
+	
+	public String toString() {
+		return nome + " (" + sigla + ")";
 	}
 }
