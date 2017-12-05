@@ -1,0 +1,8 @@
+Template "Light Bootstrap Dashboard"
+https://www.creative-tim.com/product/light-bootstrap-dashboard
+
+Icon created using Sun Icon from SVGREPO.COM
+https://www.svgrepo.com/vectos/sun-icon-collection/
+
+Photo used in the sidebar backgroud from Classy:
+http://www.correiodopovo.com.br/ArteAgenda/Variedades/Cultura/2015/5/556399/Eventos-de-rua-se-consolidam-e-entram-na-rotina-de-Porto-Alegre-

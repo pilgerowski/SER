@@ -1,12 +1,30 @@
 <?php
+function listdir($start_dir='.') {
+    $files = array();
+    $directories = array();
+    if ($handle = opendir($start_dir)) {
+        while (false !== ($entry = readdir($handle))) {
+            if ($entry != "." && $entry != "..") {
+                $filepath = $start_dir . '/' . $entry;
+                if(is_dir($filepath)) {
+                    $directories[] = $filepath;
+                } else {
+                    $files[] = $filepath;
+                }
+            }
+        }
+        foreach($directories as $dir) {
+            $files[$dir] = listdir($dir);
+        }
+        closedir($handle);
+    }
+    return $files;
+    
+}
 
-require_once("./classes/Conexao.php");
-require_once("./classes/Aplicacao.php");
+function require_file($file) {
+    if(is_string($file))
+        require_once($file);    
+}
 
-require_once("./classes/aplicacao/Categoria.php");
-require_once("./classes/aplicacao/Evento.php");
-require_once("./classes/aplicacao/Expositor.php");
-require_once("./classes/aplicacao/Local.php");
-require_once("./classes/aplicacao/Participante.php");
-require_once("./classes/aplicacao/Status.php");
-
+array_walk_recursive(listdir('./classes'), 'require_file');
