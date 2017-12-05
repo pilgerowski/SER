@@ -7,11 +7,7 @@ public class Municipio
 	private String nome;
 	private UF uf;
 
-	public Municipio() {
-
-	}
-
-	public void Municipio(String nome, UF uf) {
+	public Municipio(String nome, UF uf) {
 		this.setNome(nome);
 		this.setUF(uf);
 	}
@@ -30,5 +26,9 @@ public class Municipio
 
 	public UF getUF() {
 		return this.uf;
+	}
+	
+	public String toString() {
+		return nome + "/" + uf.getSigla();
 	}
 }

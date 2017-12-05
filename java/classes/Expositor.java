@@ -2,14 +2,10 @@ package classes;
 
 import java.net.URL;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Expositor
-
-// ## Implementation preserve start class inheritence.
-// ## Implementation preserve end class inheritence.
-
 {
-	/** Attributes */
 	private String nome;
 	private String marca;
 	private URL urlSite;
@@ -20,7 +16,9 @@ public class Expositor
 	private List<Endereco> enderecos;
 
 	public Expositor() {
-
+		telefones = new ArrayList<Telefone>();
+		emails = new ArrayList<Email>();
+		enderecos = new ArrayList<Endereco>();
 	}
 
 	public void setNome(String nome) {
@@ -87,17 +85,16 @@ public class Expositor
 		return this.enderecos;
 	}
 
-	public void adicionaTelefone(Telefone telefone, Boolean ehPrincipal) {
-		// @TODO
+	public void adicionaTelefone(String telefone, boolean ehPrincipal) {
+		telefones.add(new Telefone(telefone, ehPrincipal));
 	}
 
 	public void removeTelefone(Telefone telefone) {
-		// @TODO
+		
 	}
 
-	public void adicionaEmail(Email email, Boolean ehPrincipal) {
-
-		// @TODO
+	public void adicionaEmail(String email, boolean ehPrincipal) {
+		emails.add(new Email(email, ehPrincipal));
 	}
 
 	public void removeEmail(Email email) {
@@ -106,7 +103,7 @@ public class Expositor
 	}
 
 	public void adicionaEndereco(Endereco endereco) {
-		// @TODO
+		enderecos.add(endereco);
 	}
 
 	public void removeEndereco(Endereco endereco) {

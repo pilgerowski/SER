@@ -7,9 +7,12 @@ public class Local
 	private String localizacao;
 	private String notas;
 
-	public Local() {
+	public Local(String nome) {
+		this.setNome(nome);
+		this.setLocalizacao("");
+		this.setNotas("");	
 	}
-
+	
 	public Local(String nome, String localizacao, String notas) {
 		this.setNome(nome);
 		this.setLocalizacao(localizacao);

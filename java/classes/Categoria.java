@@ -3,11 +3,8 @@ package classes;
 public class Categoria {
 	private String nome;
 
-	public Categoria() {
-		this.setNome("");
-	}
-
 	public Categoria(String nome) {
+		this.nome = nome;
 	}
 
 	public void setNome(String nome) {
