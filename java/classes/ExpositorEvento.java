@@ -5,12 +5,19 @@ public class ExpositorEvento
 {
 	/** Attributes */
 	private ExpositorCategoria expositorCategoria;
+	private Evento evento;
 	private Status status;
 	private boolean presente;
 	private double quantidadeVendida;
 
-	public ExpositorEvento() {
-
+	public ExpositorEvento(ExpositorCategoria expCat, Evento evento, 
+				Status status, boolean presente, double quantidadeVendida) {
+		
+		this.expositorCategoria = expCat;
+		this.evento = evento;
+		this.status = status;
+		this.presente = presente;
+		this.quantidadeVendida = quantidadeVendida;
 	}
 
 	public void setExpositorCategoria(ExpositorCategoria expositor) {
@@ -21,12 +28,16 @@ public class ExpositorEvento
 		return this.expositorCategoria;
 	}
 
-	public void setExpositor(Expositor expositor, Categoria categoria) {
-
-	}
-
 	public Expositor getExpositor() {
 		return this.expositorCategoria.getExpositor();
+	}
+	
+	public void setEvento(Evento evento) {
+		this.evento = evento;
+	}
+	
+	public Evento getEvento() {
+		return evento;
 	}
 
 	public void setStatus(Status status) {
